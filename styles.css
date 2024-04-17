@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+.background {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #8e3563, #e0bbd2);
+    color: white;
+    position: absolute;
+    transition: 0.3s;
+    bottom: 0px;
+}
+.container {
+    width: 800px;
+    height: 180px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.clock {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 1, 140, 0.11);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.clock span {
+    font-size: 80px;
+    width: 110px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+.clock span::after {
+    font-size: 16px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#hrs::after {
+    content: 'HOURS';
+}
+#min::after {
+    content: 'MINUTES';
+}
+#sec::after {
+    content: 'SECONDS';
+}
+label {
+    width: 125px;
+    height: 50px;
+    position: relative;
+    display: block;
+    background: #ebebeb;
+    border-radius: 200px;
+    top: 840px;
+    left: 1700px;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: 0.3s;
+}
+label:after {
+    content: '';
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    background: linear-gradient(180deg, #8e3563, #e0bbd2);
+    border-radius: 180px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+input:checked + label {
+    background: rgb(15, 15, 15);
+}
+input:checked + label:after {
+    left:122.5px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, #08001f, #30197d)
+}
+label:active:after {
+    width: 65px;
+}
+.background {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #8e3563, #e0bbd2);
+    color: white;
+    z-index: -1;
+    position: absolute;
+    transition: 0.3s;
+}
+input:checked + label + .background {
+    background: linear-gradient(135deg, #08001f, #30197d);
+}
+#sun {
+    position: relative;
+}
+#sun img {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 320px;
+    left: 488px;
+    z-index: 5;
+}
+#moon {
+    position: relative;
+}
+#moon img {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 465px;
+    left: 1265px;
+    z-index: 6;
+}
+#watermark {
+    position: relative;
+}
+#watermark p {
+    position: absolute;
+    top: 932px;
+    left: 1800px;
+}
